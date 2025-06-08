@@ -1,6 +1,7 @@
 from service.constants import SupportedFileTypes, ExceptionMessages
 from service.utils import logger, validate_conversion_type_and_format
 from service.exceptions import BadRequestException
+from service.managers.conversion_factories import DocumentFactory, ImageFactory
 
 class DocumentConversionManager:
     """""
@@ -17,17 +18,7 @@ class DocumentConversionManager:
             raise BadRequestException(ExceptionMessages.NOT_SUPPORTED_FORMAT.format(format))
         format_type = validate_conversion_type_and_format(format, convert_to_format)
         if format_type == 'DOCUMENT':
-            return DocumentConverter.convert(validated_data)
+            return DocumentFactory.convert(validated_data)
         elif format_type == 'IMAGE':
-            return ImageConverter.convert(validated_data)
+            return ImageFactory.convert(validated_data)
         raise BadRequestException(ExceptionMessages.UNKNOWN_FORMAT_TYPE.format(format_type))
-
-class DocumentConverter:
-    @classmethod
-    def convert(cls, validated_data):
-        print('HELOOOOOOOOOOOOOOOOOOOOOOOOOo===========DOCUMENT CLASS=================')
-
-class ImageConverter:
-    @classmethod
-    def convert(cls, validated_data):
-        print('HELOOOOOOOOOOOOOOOOOOOOOOOOOo==========IMAGE CLASS==================')
