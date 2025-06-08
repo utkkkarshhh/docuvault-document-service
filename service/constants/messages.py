@@ -9,6 +9,7 @@ class ResponseMessages:
     FAILED_TO_DELETE_DOCUMENT = "Failed to delete the document"
     FILE_FETCHED_SUCCESSFULLY = 'File fetched successfully'
     DOCUMENT_DOES_NOT_BELONG_TO_USER = "This document does not belong to the user"
+    ALL_DOCUMENT_DELETED_FOR_USER = "All documents deleted for user {}"
 
 class HTTPResponseMessages:
     HTTP_REQUEST_ERROR = "Error while making HTTP request"
@@ -28,3 +29,4 @@ class ExceptionMessages:
     UNKNOWN_FORMAT_TYPE = "{} is an unknown format type"
     UNIDENTIFIED_FORMAT_TYPE = "{} is an unidentified format. Please try after some time."
     CONVERSION_MAPPING_NOT_FOUND = "Conversion mapping not found for format {}"
+    NO_DOCUMENT_FOUND_FOR_USER = "No documents found for user {}"

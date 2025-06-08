@@ -6,6 +6,7 @@ __all__ = [
     "DownloadDocumentView",
     "UserDocumentListView",
     "ConvertDocumentView",
+    "DeleteAllUserDocumentsView",
 ]
 
 from service.views.healthcheck import HealthCheck
@@ -15,3 +16,4 @@ from service.views.delete_document_view import DeleteDocumentView
 from service.views.download_document_view import DownloadDocumentView
 from service.views.user_documents_list_view import UserDocumentListView
 from service.views.convert_document_view import ConvertDocumentView
+from service.views.delete_all_user_documents_view import DeleteAllUserDocumentsView

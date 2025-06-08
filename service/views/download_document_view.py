@@ -20,7 +20,7 @@ class DownloadDocumentView(APIView):
             raise BadRequestException(ResponseMessages.DOCUMENT_DOES_NOT_BELONG_TO_USER)
         raise BadRequestException(ResponseMessages.NO_DOCUMENT_FOUND_FOR_ID.format(document_id, user_id))
     
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
         if not serializer.is_valid():
             error_message = CommonUtils.handle_serializer_error(serializer.errors)
@@ -30,7 +30,7 @@ class DownloadDocumentView(APIView):
         filename = f"{document.unique_name}.{document.format}"
         file = self.firebase.generate_signed_url(filename)
         return ResponseHandler(
-            status=status.HTTP_202_ACCEPTED,
+            status=status.HTTP_200_OK,
             success=True,
             message=ResponseMessages.FILE_FETCHED_SUCCESSFULLY,
             data={
