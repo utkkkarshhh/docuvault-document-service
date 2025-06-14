@@ -10,4 +10,4 @@ def set_search_path(sender, connection, **kwargs):
         return
 
     with connection.cursor() as cursor:
-        cursor.execute(f"SET search_path TO document")
+        cursor.execute(f"SET search_path TO document, document")
