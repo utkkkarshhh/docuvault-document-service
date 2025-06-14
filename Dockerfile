@@ -18,4 +18,4 @@ COPY . .
 
 EXPOSE 9001
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:9001"]
+CMD ["sh", "-c", "python manage.py migrate service && python manage.py runserver 0.0.0.0:9001"]
