@@ -39,7 +39,7 @@ class UploadDocumentView(APIView):
         document = Documents.objects.create(
             unique_name = unique_file_name,
             upload_name = data.get('name'),
-            description = data.get('description'),
+            description = data.get('description') if data.get('description') else None,
             type = data.get('type'),
             link = document_link,
             format = data.get('format'),

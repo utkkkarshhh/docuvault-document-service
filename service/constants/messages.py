@@ -3,7 +3,7 @@ class ResponseMessages:
     FILE_UPLOADED_SUCCESSFULLY = "File uploaded successfully"
     FORMAT_NOT_SUPPORTED = "File format not supported"
     DOCUMENTS_RETRIEVED_SUCCESSFULLY = "Retrieved user documents"
-    NO_DOCUMENTS_FOUND = "No documents found for user id {}"
+    NO_DOCUMENTS_FOUND = "Documents fetched! Looks like you haven't uploaded anything yet."
     NO_DOCUMENT_FOUND_FOR_ID = "No document with id {} found for user id {}"
     DOCUMENT_DELETED_SUCCESSFULLY = "Document deleted successfully"
     FAILED_TO_DELETE_DOCUMENT = "Failed to delete the document"

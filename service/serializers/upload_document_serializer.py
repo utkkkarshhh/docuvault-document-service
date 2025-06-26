@@ -9,7 +9,7 @@ from service.models import DocumentCategoryMaster
 
 class UploadDocumentSerializer(serializers.Serializer):
     name = serializers.CharField(required=True)
-    description = serializers.CharField(required=True)
+    description = serializers.CharField(required=False)
     file = serializers.FileField(required=True)
     type = serializers.PrimaryKeyRelatedField(queryset=DocumentCategoryMaster.objects.all(), required=True)
     user_id = serializers.IntegerField(required=True)
